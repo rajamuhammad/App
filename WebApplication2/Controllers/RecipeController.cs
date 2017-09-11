@@ -10,24 +10,39 @@ namespace WebApplication2.Controllers
     public class RecipeController : Controller
     {
         List<Recipe> arr = new List<Recipe>();
+        List<Tip> list = new List<Tip>();
         public RecipeController()
         {
 
             arr.Add(new Recipe() { Id = 1, Name = "Abc", Ingredients = "asjdhasjkhdjkh", Method = "sjkdklasjklhdjkhasjk" });
             arr.Add(new Recipe() { Id = 1, Name = "Abc", Ingredients = "asjdhasjkhdjkh", Method = "sjkdklasjklhdjkhasjk" });
             arr.Add(new Recipe() { Id = 1, Name = "Abc", Ingredients = "asjdhasjkhdjkh", Method = "sjkdklasjklhdjkhasjk" });
-           
+
+
+
+            
+
+
+
         }
 
 
         public ActionResult Index()
         {
+            list.Add(new Tip() { Id = 1, Name = "Purana totka", Tips = "Abc " });
+            list.Add(new Tip() { Id = 2, Name = "Purana totka", Tips = "Abc " });
+            list.Add(new Tip() { Id = 3, Name = "Purana totka", Tips = "Abc " });
+            list.Add(new Tip() { Id = 4, Name = "Purana totka", Tips = "Abc " });
+            list.Add(new Tip() { Id = 5, Name = "Purana totka", Tips = "Abc " });
+
+            ViewBag.Data = list;
             return View(arr);
         }
 
        
         public ActionResult create()
         {
+
             return View();
         }
 
